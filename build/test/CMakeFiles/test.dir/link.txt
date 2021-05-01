@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -O2 -g  -rdynamic CMakeFiles/test.dir/test.cpp.o  -o test -Wl,-rpath,/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/src ../src/libbspline.so 

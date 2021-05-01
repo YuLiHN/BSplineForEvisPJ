@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lu/Desktop/PanoMotionEst/BSplineExercise/src/test.cpp
+include/lie_bspline.h
+/home/lu/Desktop/PanoMotionEst/BSplineExercise/src/include/lie_bspline.h
+
