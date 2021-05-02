@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++11 -O2  -rdynamic CMakeFiles/test.dir/src/test.cpp.o  -o test -lSophus 
