@@ -59,8 +59,8 @@ int main(int argc, char *argv[])
 
 	Eigen::Isometry3d tf1;
 	Eigen::Isometry3d tf2;
-	Sophus::SE3d tf3;
-	Sophus::SE3d temp_p1,temp_p2,temp_p3,temp_p4,temp_p5,temp_p6,temp_p7;
+	Sophus::SE3 tf3;
+	Sophus::SE3 temp_p1,temp_p2,temp_p3,temp_p4,temp_p5,temp_p6,temp_p7;
 	bs.SE3Eigen2Sophus(temp_pose1,temp_p1);
 	bs.SE3Eigen2Sophus(temp_pose2,temp_p2);
 	bs.SE3Eigen2Sophus(temp_pose3,temp_p3);

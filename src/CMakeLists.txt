@@ -4,4 +4,5 @@ add_library( bspline SHARED
 
 target_link_libraries( bspline
     ${THIRD_PARTY_LIBS}
+    ${Sophus_LIBRARIES}
 )
