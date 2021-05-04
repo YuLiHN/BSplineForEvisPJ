@@ -1,8 +1,0 @@
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/CMakeFiles/rebuild_cache.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/CMakeFiles/edit_cache.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/src/CMakeFiles/rebuild_cache.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/src/CMakeFiles/bspline.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/src/CMakeFiles/edit_cache.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/test/CMakeFiles/rebuild_cache.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/test/CMakeFiles/test_bsp.dir
-/home/lu/Desktop/PanoMotionEst/BSplineExercise/build/test/CMakeFiles/edit_cache.dir

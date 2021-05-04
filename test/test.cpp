@@ -42,20 +42,6 @@ int main(int argc, char *argv[])
 	temp_pose7.translate(Eigen::Vector3d(1,1.5,3.7));
 	cout<<"pose7"<<temp_pose7.matrix()<<endl;
 
-	// Sophus::SE3d a(Eigen::AngleAxisd(0, Eigen::Vector3d(0,0,1)).toRotationMatrix(),Eigen::Vector3d(0,0,0)),
-	// 		b(Eigen::AngleAxisd(M_PI, Eigen::Vector3d(0,0,1)).toRotationMatrix(),Eigen::Vector3d(1,2,1));
-
-    // typedef Eigen::Matrix<double,6,1> Vector6d;
-    // Vector6d ase3 = b.log();
-    // cout<< ase3 <<endl;
-
-    // for (double i = 0; i < 100; ++i) 
-    // {
-	// 	Eigen::Isometry3d tf;
-	// 	//Eigen::Matrix4d mat;
-	// 	tf = bs.cumulativeForm(temp_pose1,temp_pose2,temp_pose3,temp_pose4,i/100.0);
-	// 	cout<<i<<endl<<tf.matrix()<<endl;
-	// }
 
 	Eigen::Isometry3d tf1;
 	Eigen::Isometry3d tf2;
@@ -69,20 +55,17 @@ int main(int argc, char *argv[])
 	bs.SE3Eigen2Sophus(temp_pose6,temp_p6);
 	bs.SE3Eigen2Sophus(temp_pose7,temp_p7);
 
-	tf1 = bs.cumulativeForm(temp_pose1,temp_pose2,temp_pose3,temp_pose4,1.00);
-	tf2 = bs.cumulativeForm(temp_pose2,temp_pose3,temp_pose4,temp_pose5,0.00);
 	tf3 = bs.cumulativeForm1(temp_p1,temp_p2,temp_p3,temp_p4,0.00);
-	cout<<tf1.matrix()<<endl<<tf2.matrix()<<endl;
 	cout<<tf3.matrix()<<endl;
 
 	BSpline bs2;
-	bs.addKnot(0,temp_p1);
-	bs.addKnot(1,temp_p2);
-	bs.addKnot(2,temp_p3);
-	bs.addKnot(3,temp_p4);
-	bs.addKnot(4,temp_p5);
-	bs.addKnot(5,temp_p6);
-	bs.addKnot(6,temp_p7);
+	bs.addKnot(temp_p1);
+	bs.addKnot(temp_p2);
+	bs.addKnot(temp_p3);
+	bs.addKnot(temp_p4);
+	bs.addKnot(temp_p5);
+	bs.addKnot(temp_p6);
+	bs.addKnot(temp_p7);
 	for(int i=0;i<39;i++)
 	{
 		double ts = 1. + double(i)/10;
