@@ -1,5 +1,5 @@
 clear;
-close all;
+%close all;
 
 hold on;
 grid on;
@@ -21,8 +21,6 @@ for j=1:(n-1)
     uu=(knots(j+3)):0.01:knots(j+4);
     for kk=1:length(uu)
         mm=mm+1;
-        %x(down)=control_point(j,1)*RCoxdeBoor(j,3,knots,uu(kk))+control_point(j+1,1)*RCoxdeBoor(j+1,3,knots,uu(kk))+control_point(j+2,1)*RCoxdeBoor(j+2,3,knots,uu(kk))+control_point(j+3,1)*RCoxdeBoor(j+3,3,knots,uu(kk));
-        %y(down)=control_point(j,2)*RCoxdeBoor(j,3,knots,uu(kk))+control_point(j+1,2)*RCoxdeBoor(j+1,3,knots,uu(kk))+control_point(j+2,2)*RCoxdeBoor(j+2,3,knots,uu(kk))+control_point(j+3,2)*RCoxdeBoor(j+3,3,knots,uu(kk));
         X(mm,1)=control_point(j,1)*RCoxdeBoor(j,3,knots,uu(kk))+control_point(j+1,1)*RCoxdeBoor(j+1,3,knots,uu(kk))+control_point(j+2,1)*RCoxdeBoor(j+2,3,knots,uu(kk))+control_point(j+3,1)*RCoxdeBoor(j+3,3,knots,uu(kk));
         X(mm,2)=control_point(j,2)*RCoxdeBoor(j,3,knots,uu(kk))+control_point(j+1,2)*RCoxdeBoor(j+1,3,knots,uu(kk))+control_point(j+2,2)*RCoxdeBoor(j+2,3,knots,uu(kk))+control_point(j+3,2)*RCoxdeBoor(j+3,3,knots,uu(kk));
     end
