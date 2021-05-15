@@ -28,7 +28,7 @@ def batch_quat2rot(Qt):
         r = R.from_quat(Qt[i,:])
         #print(Qt[i,:])
         temp = r.as_matrix()
-        res.append(quaternion_to_rotation_matrix(Qt[i,:]))
+        res.append(temp)
     return np.array(res)
 
 # C_op_batch_gt = batch_quat2rot(gt_data[10:2480,5:])
@@ -40,13 +40,22 @@ def batch_quat2rot(Qt):
 # plt.plot(data[:,0], data[:, 3], 'b')
 
 C_op_batch = bsp_data[:,[1,2,3,5,6,7,9,10,11]].reshape(2470,3,3)
+quat_gt = gt_data[10:2480,5:]
+
+phi_gt = batch_inv_so3(batch_quat2rot(quat_gt))
+print(phi_gt.shape,bsp_data.shape)
 
 phi_batch = batch_inv_so3(C_op_batch)
 #print(phi_batch)
 plt.figure()
 plt.title('plot')
-plt.plot(bsp_data[::100,0], phi_batch[0::100, 0], 'r.')
+# plt.plot(bsp_data[600:700:10,0], phi_gt[600:700:10,0],'r.')
+# plt.plot(bsp_data[600:700,0], phi_batch[600:700, 0], 'r')
+plt.plot(bsp_data[:,0], phi_batch[:, 0], 'r')
+plt.plot(bsp_data[::100,0], phi_gt[::100, 0], 'r.')
 plt.plot(bsp_data[:,0], phi_batch[:, 1], 'g')
+plt.plot(bsp_data[::100,0], phi_gt[::100, 1], 'g.')
 plt.plot(bsp_data[:,0], phi_batch[:, 2], 'b')
+plt.plot(bsp_data[::100,0], phi_gt[::100, 2], 'b.')
 plt.show()
 
