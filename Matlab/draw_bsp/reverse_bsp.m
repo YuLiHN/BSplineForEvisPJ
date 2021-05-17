@@ -25,12 +25,14 @@ for i=1:n-1
     knots(k+i+1)=knots(k+i)+sqrt((data(i+1,1)-data(i,1))^2+(data(i+1,2)-data(i,2))^2);
 end
     L=knots(n+k);
+disp(L);
 for i=1:n
     knots(k+i)=knots(k+i)/L;
 end
 for i=1:3
     knots(k+i+n)=1;
 end
+disp(knots);
 
 %% calculating n+2 control points book p.257
 %首位重节点v1=v2
@@ -54,6 +56,7 @@ for i=3:n
     A(i,i+j-1)=RCoxdeBoor(i+j-1,k,knots,knots(i+2)); %p240
    end
 end
+disp(A)
 %e:方程右边.
 e=0;
 for i=1:m
