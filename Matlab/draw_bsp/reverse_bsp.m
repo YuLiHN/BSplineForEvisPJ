@@ -51,7 +51,7 @@ A(n+2,n+1)=-1;A(n+2,n+2)=1;
 A(n+1,n+1)=1;
 for i=3:n
   for j=0:2
-    A(i,i+j-1)=RCoxdeBoor(i+j-1,k,knots,knots(i+2));
+    A(i,i+j-1)=RCoxdeBoor(i+j-1,k,knots,knots(i+2)); %p240
    end
 end
 %e:方程右边.

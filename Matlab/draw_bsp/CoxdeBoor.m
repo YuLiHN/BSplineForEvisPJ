@@ -1,6 +1,5 @@
 function x = CoxdeBoor(t, controlPoints, knots, k)
 
-
 % Find the index j such as knots(j+1) <= t < knots(j+2).
 % If it can't find it, return the last point of the control points vector
 % (assuming endpoint interpolation)
